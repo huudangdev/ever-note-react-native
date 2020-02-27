@@ -13,7 +13,10 @@ export default function HomeScreen (props) {
 
   const [isFetching, setIsFetching] = useState(false)
 
-  const dataReducer = useSelector((state) => state.dataReducer)
+  const dataReducer = useSelector((state) => {
+    console.log('state: ' + typeof (state.reducer.notes))
+    return state.reducer
+  })
   let notes
   if (dataReducer) {
     notes = dataReducer.notes

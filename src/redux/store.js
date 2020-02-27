@@ -5,4 +5,4 @@ import rootReducer from './rootReducer'
 
 const enhancer = compose(applyMiddleware(thunk))
 
-export default createStore(rootReducer, applyMiddleware(thunk))
+export default createStore(rootReducer, enhancer)

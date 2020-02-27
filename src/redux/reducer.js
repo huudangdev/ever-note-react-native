@@ -21,7 +21,6 @@ const handleDeleteNote = (action, state) => {
   const { id } = action.data
   const clone = JSON.parse(JSON.stringify(state.notes))
   const index = clone.findIndex((obj) => obj.id === id)
-
   if (index !== -1) clone.splice(index, 1)
 }
 
@@ -39,6 +38,7 @@ const dataReducer = (state = dataState, action) => {
 
     case DELETE_NOTE:
       return { ...state, notes: handleDeleteNote(action, state) }
+
     default:
       return state
   }
